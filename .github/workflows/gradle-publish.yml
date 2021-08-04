@@ -4,9 +4,13 @@
 name: Gradle Package
 
 on:
-  release:
-    types: [stars]
-
+  push:
+  gollum:
+  schedule:
+    - cron: '30 1,13 * * *' # Actions 时区为 UTC 时间，比国内慢了 8 个小时.
+  watch:
+    types: [ started ]
+    
 jobs:
   build:
 
